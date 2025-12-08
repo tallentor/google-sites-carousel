@@ -2,59 +2,64 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Stylish 5-Image Carousel</title>
+  <title>Clean 5-Image Carousel</title>
 
   <!-- Swiper CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 
   <style>
-    body { margin: 0; font-family: Arial, sans-serif; background: #f5f5f5; }
-    .swiper { width: 90%; max-width: 1200px; height: 320px; margin: 50px auto; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.2); background: #fff; }
-    
-    .swiper-slide { display: flex; justify-content: space-between; align-items: center; }
-    .swiper-slide img {
-      width: 19%; /* 5 images fit nicely */
-      object-fit: cover;
-      border-radius: 10px;
-      transition: transform 0.3s, box-shadow 0.3s;
-      cursor: pointer;
+    body { margin: 0; padding: 0; }
+
+    /* Swiper container */
+    .swiper {
+      width: 100%;
+      height: auto;
+      padding: 20px 0;
     }
+
+    .swiper-slide {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .swiper-slide img {
+      width: 19%; /* 5 images per slide */
+      object-fit: cover;
+      border-radius: 5px;
+      transition: transform 0.3s;
+    }
+
     .swiper-slide img:hover {
       transform: scale(1.05);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
     }
 
     /* Navigation arrows */
     .swiper-button-next, .swiper-button-prev {
-      color: #ff6f61;
-      background: rgba(255,255,255,0.8);
-      padding: 10px;
-      border-radius: 50%;
-      width: 40px; height: 40px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-      transition: background 0.3s;
-    }
-    .swiper-button-next:hover, .swiper-button-prev:hover {
-      background: #ff6f61;
-      color: #fff;
+      color: #000;
     }
 
     /* Pagination bullets */
     .swiper-pagination-bullet {
-      background: #ff6f61;
-      opacity: 0.8;
+      background: #000;
+      opacity: 0.6;
     }
     .swiper-pagination-bullet-active {
-      background: #ff3b2f;
+      background: #000;
+      opacity: 1;
     }
+
+    /* Remove scrollbars */
+    .swiper-wrapper {
+      overflow: hidden !important;
+    }
+
   </style>
 </head>
-
 <body>
 
 <div class="swiper">
   <div class="swiper-wrapper">
-
     <!-- Slide 1 -->
     <div class="swiper-slide">
       <img src="images/image003.png" alt="Image 003">
@@ -64,7 +69,7 @@
       <img src="images/image003.png" alt="Image 003">
     </div>
 
-    <!-- Slide 2 (looping) -->
+    <!-- Slide 2 -->
     <div class="swiper-slide">
       <img src="images/image003.png" alt="Image 003">
       <img src="images/image005.png" alt="Image 005">
@@ -72,13 +77,11 @@
       <img src="images/image009.png" alt="Image 009">
       <img src="images/image003.png" alt="Image 003">
     </div>
-
   </div>
 
-  <!-- Navigation -->
+  <!-- Controls -->
   <div class="swiper-button-prev"></div>
   <div class="swiper-button-next"></div>
-  <!-- Pagination -->
   <div class="swiper-pagination"></div>
 </div>
 
@@ -86,14 +89,18 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 <script>
-  const swiper = new Swiper(".swiper", {
+  new Swiper(".swiper", {
     loop: true,
-    autoplay: { delay: 3000, disableOnInteraction: false },
-    speed: 800,
     slidesPerView: 1,
     spaceBetween: 10,
+    autoplay: { delay: 3000, disableOnInteraction: false },
     navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
     pagination: { el: ".swiper-pagination", clickable: true },
+    breakpoints: {
+      640: { slidesPerView: 1 },
+      768: { slidesPerView: 3 },
+      1024: { slidesPerView: 5 },
+    },
   });
 </script>
 
