@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>4 Image Carousel</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+  <style>
+    body { margin: 0; padding: 0; }
+    .swiper { width: 100%; height: 300px; }
+    .swiper-slide { display: flex; justify-content: center; gap: 10px; }
+    .swiper-slide img {
+      width: 24%;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="swiper">
+  <div class="swiper-wrapper">
+
+    <!-- Slide 1 -->
+    <div class="swiper-slide">
+      <img src="https://drive.google.com/uc?export=view&id=1vr_ezmS7nKxwL7ZQXYro01SJE2VS3iq4">
+      <img src="https://drive.google.com/uc?export=view&id=1vr_ezmS7nKxwL7ZQXYro01SJE2VS3iq4">
+      <img src="https://drive.google.com/uc?export=view&id=1vr_ezmS7nKxwL7ZQXYro01SJE2VS3iq4">
+      <img src="https://drive.google.com/uc?export=view&id=1vr_ezmS7nKxwL7ZQXYro01SJE2VS3iq4">
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="swiper-slide">
+      <img src="https://drive.google.com/uc?export=view&id=1vr_ezmS7nKxwL7ZQXYro01SJE2VS3iq4">
+      <img src="https://drive.google.com/uc?export=view&id=1SbQyYOJoNPDcgWuCnnt4AnQ3uc7SAOnv">
+      <img src="https://drive.google.com/uc?export=view&id=1SbQyYOJoNPDcgWuCnnt4AnQ3uc7SAOnv">
+      <img src="https://drive.google.com/uc?export=view&id=1SbQyYOJoNPDcgWuCnnt4AnQ3uc7SAOnv">
+    </div>
+
+  </div>
+
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+  <div class="swiper-pagination"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+  new Swiper(".swiper", {
+    loop: true,
+    autoplay: { delay: 3000 },
+    pagination: { el: ".swiper-pagination", clickable: true },
+    navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+  });
+</script>
+
+</body>
+</html>
