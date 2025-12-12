@@ -9,11 +9,32 @@
 
   <style>
     body { margin: 0; padding: 0; }
+
     .swiper { width: 100%; height: 300px; }
-    .swiper-slide { display: flex; justify-content: center; gap: 10px; }
+
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
     .swiper-slide img {
-      width: 19%; /* 5 images fit nicely */
+      width: 19%;
       object-fit: cover;
+    }
+
+    /* 🔴 Make arrow color RED */
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: red !important;
+    }
+
+    /* Optional: stronger hover effect */
+    .swiper-button-next:hover,
+    .swiper-button-prev:hover {
+      color: #ff0000 !important;
+      transform: scale(1.2);
+      transition: 0.2s ease;
     }
   </style>
 </head>
@@ -23,33 +44,29 @@
 <div class="swiper">
   <div class="swiper-wrapper">
 
-    <!-- Slide 1 -->
     <div class="swiper-slide">
-      <img src="images/image001.jpg" alt="Image 003"> 
-      <img src="images/image002.jpg" alt="Image 005">
-      <img src="images/image003.jpeg" alt="Image 007">
-      <img src="images/image004.jpg" alt="Image 009">
-      <img src="images/image005.jpg" alt="Image 007">
+      <img src="images/image001.jpg">
+      <img src="images/image002.jpg">
+      <img src="images/image003.jpeg">
+      <img src="images/image004.jpg">
+      <img src="images/image005.jpg">
     </div>
 
-    <!-- Slide 2 (looping) -->
     <div class="swiper-slide">
-      <img src="images/image006.jpg" alt="Image 003">
-      <img src="images/image001.jpg" alt="Image 005">
-      <img src="images/image002.jpg" alt="Image 007">
-      <img src="images/image003.jpeg" alt="Image 009">
-     <img src="images/image004.jpg" alt="Image 005">
+      <img src="images/image006.jpg">
+      <img src="images/image001.jpg">
+      <img src="images/image002.jpg">
+      <img src="images/image003.jpeg">
+      <img src="images/image004.jpg">
     </div>
 
   </div>
 
-  <!-- Swiper controls -->
   <div class="swiper-button-prev"></div>
   <div class="swiper-button-next"></div>
   <div class="swiper-pagination"></div>
 </div>
 
-<!-- Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 <script>
