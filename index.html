@@ -19,17 +19,16 @@
     }
 
     .swiper-slide img {
-      width: 19%;
+      width: 19%; /* exactly 5 images */
       object-fit: cover;
     }
 
-    /* 🔴 Make arrow color RED */
+    /* 🔴 Red arrows */
     .swiper-button-next,
     .swiper-button-prev {
       color: red !important;
     }
 
-    /* Optional: stronger hover effect */
     .swiper-button-next:hover,
     .swiper-button-prev:hover {
       color: #ff0000 !important;
@@ -44,21 +43,17 @@
 <div class="swiper">
   <div class="swiper-wrapper">
 
-    <div class="swiper-slide">
-      <img src="images/image001.jpg">
-      <img src="images/image002.jpg">
-      <img src="images/image003.jpeg">
-      <img src="images/image004.jpg">
-      <img src="images/image005.jpg">
-    </div>
-
-    <div class="swiper-slide">
-      <img src="images/image006.jpg">
-      <img src="images/image007.jpg">
-      <img src="images/image008.jpg">
-      <img src="images/image009.jpg">
-      <img src="images/image0010.jpg">
-    </div>
+    <!-- ONE IMAGE PER SLIDE NOW -->
+    <div class="swiper-slide"><img src="images/image001.jpg"></div>
+    <div class="swiper-slide"><img src="images/image002.jpg"></div>
+    <div class="swiper-slide"><img src="images/image003.jpeg"></div>
+    <div class="swiper-slide"><img src="images/image004.jpg"></div>
+    <div class="swiper-slide"><img src="images/image005.jpg"></div>
+    <div class="swiper-slide"><img src="images/image006.jpg"></div>
+    <div class="swiper-slide"><img src="images/image007.jpg"></div>
+    <div class="swiper-slide"><img src="images/image008.jpg"></div>
+    <div class="swiper-slide"><img src="images/image009.jpg"></div>
+    <div class="swiper-slide"><img src="images/image0010.jpg"></div>
 
   </div>
 
@@ -72,6 +67,9 @@
 <script>
   new Swiper(".swiper", {
     loop: true,
+    slidesPerView: 5,     // show 5 images at once
+    slidesPerGroup: 1,    // move ONE image per slide
+    spaceBetween: 10,
     autoplay: { delay: 3000 },
     pagination: { el: ".swiper-pagination", clickable: true },
     navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
